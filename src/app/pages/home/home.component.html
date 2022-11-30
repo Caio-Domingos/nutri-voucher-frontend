@@ -1,0 +1,44 @@
+<main>
+  <section class="form-content mat-elevation-z4">
+    <form (submit)="submit(f)" #f="ngForm">
+      <img
+        src="../../../assets/logoweburn.png"
+        alt="Logo Weburn"
+        class="logo"
+      />
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          name="email"
+          ngModel
+          email
+          required
+          value="gustavo@weburn.com.br"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Voucher</mat-label>
+        <input
+          matInput
+          name="voucher"
+          ngModel
+          required
+          [minlength]="19"
+          [maxlength]="19"
+        />
+      </mat-form-field>
+      <div class="progress-bar" [class.hide]="!loading">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </div>
+      <button
+        mat-raised-button
+        [disabled]="f.invalid! || loading"
+        type="submit"
+        color="primary"
+      >
+        Usar Voucher
+      </button>
+    </form>
+  </section>
+</main>

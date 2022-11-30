@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiThinkless: 'http://localhost:5001/weburn-voucher-dispenser-v2/us-central1',
 };
 
 /*
