@@ -8,6 +8,12 @@ main {
   align-items: center;
   justify-content: center;
 
+  .subtitle {
+    margin: 1em 1.5em;
+    color: white;
+    text-align: center;
+  }
+
   .form-content {
     width: clamp(350px, 40%, 600px);
     min-height: 400px;

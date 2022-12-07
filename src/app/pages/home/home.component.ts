@@ -27,9 +27,18 @@ export class HomeComponent implements OnInit {
 
         Swal.fire({
           title: 'Voucher Criado!',
-          text: 'Em breve seus créditos Nutri serão inseridos.',
+          html: `Preencha sua ficha de paciente, e após marque sua consulta.<br>
+          Utilize sempre esse <strong>MESMO E-MAIL</strong> da ativação.<br>
+          Uso <strong>PESSOAL</strong> e <strong>INTRANSFERÍVEL</strong>`,
           icon: 'success',
           confirmButtonText: 'Fechar',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            const a = document.createElement('a');
+            a.href = 'http://consulta.weburn.com.br/anamnese';
+            a.target = '_blank';
+            a.click();
+          }
         });
         this.loading = false;
       },
